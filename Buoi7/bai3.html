@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+    <style>
+        .clickable {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="clickable" id="element1">Click vào đây</div>
+    <p class="clickable" id="element2">Click vào đây</p>
+
+    <script>
+        // Thêm sự kiện click cho các phần tử có class "clickable"
+    function addClickEvent() {
+        const clickableElements = document.querySelectorAll('.clickable');
+
+    // Hàm xử lý sự kiện click
+    function handleClick(event) {
+        // Thay đổi màu sắc của phần tử khi được click
+        event.target.style.backgroundColor = getRandomColor();
+    }
+
+    // Gán sự kiện click cho mỗi phần tử
+    clickableElements.forEach(element => {
+        element.addEventListener('click', handleClick);
+    });
+
+    // Hàm sinh màu ngẫu nhiên
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    }
+    window.onload = addClickEvent;
+
+    </script>
+</body>
+</html>

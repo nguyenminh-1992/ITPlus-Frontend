@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 6</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span id="nameError" class="error"></span>
+
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span id="emailError" class="error"></span>
+
+    <br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Lấy dữ liệu từ form
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+
+      // Truyền thông báo lỗi
+      document.getElementById("nameError").innerText = "";
+      document.getElementById("emailError").innerText = "";
+
+      // Kiểm tra tên không được để trống
+      if (name.trim() === "") {
+        document.getElementById("nameError").innerText = "Tên không được trống";
+        return;
+      }
+
+      // Kiểm tra email phải đúng định dạng
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById("emailError").innerText = "Mail không đúng định dạng";
+        return;
+      }
+      // Nếu thông tin được truyền đúng, tạo đường dẫn tới trang ketqua.html bao gồm tên và email
+      window.location.href = "ketqua.html?name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email);
+      });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+</head>
+<body>
+    <button id="addElementButton">Thêm phần tử</button>
+    <ul id="elementList"></ul>
+
+    <script>
+        // Thêm sự kiện click cho nút "Thêm phần tử"
+    function addClickEvent() {
+        const addButton = document.getElementById('addElementButton');
+        addButton.addEventListener('click', addElementToList);
+    }
+
+    // Thêm một phần tử mới vào danh sách
+    function addElementToList() {
+        const elementList = document.getElementById('elementList');
+
+    // Tạo một phần tử li mới
+        const newElement = document.createElement('li');
+        newElement.textContent = 'Đã thêm phần tử';
+
+    // Thêm phần tử mới vào danh sách
+            elementList.appendChild(newElement);
+    }
+    window.onload = addClickEvent;
+
+    </script>
+</body>
+</html>
