@@ -1,0 +1,36 @@
+h1 {
+    background-color: beige;
+
+}
+
+h1:hover {
+    color: blue;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+a:visited{
+    color:chartreuse;
+}
+
+html:active{
+    background: yellow;
+}
+p::first-line{
+    color: blue;
+    background-color: lightblue;
+}
+
+h3::before{
+  content: "\00AB\0020"
+}
+
+h3::after{
+    content: "\0020\00BB"
+}
+h4::before{
+    content: "Xin chao,"
+}
+h4::after{
+    content: "Minh"
+}

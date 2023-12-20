@@ -1,0 +1,43 @@
+body{
+    padding: 20px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.item{
+    background-color: yellow;
+    border: 1px solid black;
+
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-areas: 
+    "header header header"
+    "nav article ads"
+    "nav footer footer";
+}
+.item-1{
+    grid-area: header;
+}
+.item-2{
+    grid-area: nav;
+}
+.item-3{
+    grid-area: article;
+}
+.item-4{
+    grid-area: ads;
+}
+.item-5{
+    grid-area: nav;
+}
+.item-6{
+    grid-area: footer;
+}
+
+
