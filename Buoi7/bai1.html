@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+<body>
+    <h1 id="title">Hello, DOM!</h1>
+    <p id="paragraph">This is a paragraph.</p>
+    <div id="container">This is a div element.</div>
+
+    <script>
+    // Lấy và hiển thị nội dung của các phần tử trong console
+    function displayElementContent() {
+    // Lấy phần tử h1 và hiển thị nội dung
+    const titleElement = document.getElementById('title');
+    console.log('Title:', titleElement.textContent);
+
+    // Lấy phần tử p và hiển thị nội dung
+    const paragraphElement = document.getElementById('paragraph');
+    console.log('Paragraph:', paragraphElement.textContent);
+
+    // Lấy phần tử div và hiển thị nội dung
+    const divElement = document.getElementById('container');
+    console.log('Div:', divElement.textContent);
+    }
+    // Gọi hàm khi trang web được tải
+    window.onload = displayElementContent;
+    </script>
+</body>
+</html>

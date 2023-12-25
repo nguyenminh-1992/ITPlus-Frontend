@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+    <style>
+        /* CSS để ẩn các phần tử */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p id="elementToHideShow">Ẩn hiện phần tử</p>
+    <button id="hideButton">Ẩn</button>
+    <button id="showButton">Hiện</button>
+
+    <script>
+        // Thêm sự kiện click cho nút "Ẩn" và "Hiện"
+    function addClickEvents() {
+        const hideButton = document.getElementById('hideButton');
+        hideButton.addEventListener('click', hideElement);
+
+        const showButton = document.getElementById('showButton');
+        showButton.addEventListener('click', showElement);
+    }
+
+        // Ẩn phần tử
+    function hideElement() {
+        const elementToHideShow = document.getElementById('elementToHideShow');
+        elementToHideShow.classList.add('hidden');
+    }
+
+        // Hiện phần tử
+    function showElement() {
+        const elementToHideShow = document.getElementById('elementToHideShow');
+        elementToHideShow.classList.remove('hidden');
+    }
+
+    window.onload = addClickEvents;
+    </script>
+</body>
+</html>
